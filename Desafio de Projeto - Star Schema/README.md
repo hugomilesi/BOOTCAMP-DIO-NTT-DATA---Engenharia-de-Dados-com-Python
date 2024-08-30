@@ -1,36 +1,67 @@
 # Modelo Relacional
 
-Metadados das tabelas:
+### Diagrama Relacional
+![Diagrama Relacional da Escola](escola_relational_diag.png)
 
-Professores: Dados sobre os professores, incluindo informações pessoais e financeiras.
-Departamentos: Dados sobre os departamentos, incluindo o chefe do departamento.
-Cursos: Informações sobre os cursos oferecidos, incluindo a duração e o departamento responsável.
-Disciplinas: Detalhes das disciplinas, incluindo carga horária e curso associado.
-OfertasDisciplinas: Registro das disciplinas oferecidas por professores em períodos específicos.
-Alunos: Informações dos alunos, como nome, matrícula e curso.
-MatriculasDisciplinas: Dados sobre a matrícula dos alunos em disciplinas e suas notas finais.
-Avaliacoes: Informações sobre avaliações dos alunos em disciplinas.
-Turmas: Dados sobre as turmas, associadas a cursos.
-Horários: Horários das disciplinas nas turmas, incluindo dias e horários de aula.
+## Metadados das Tabelas
 
+**Professores**: Armazena dados pessoais e financeiros dos professores.
 
+**Departamentos**: Contém informações sobre os departamentos da escola, incluindo o chefe de cada departamento.
 
-# Star Schema 
+**Cursos**: Guarda detalhes dos cursos oferecidos, como duração e o departamento responsável.
 
-## Tabela Fato (Fato_Professores):
+**Disciplinas**: Detalha as disciplinas, incluindo carga horária e o curso ao qual estão associadas.
 
+**OfertasDisciplinas**: Registra as disciplinas oferecidas por professores em períodos específicos.
+
+**Alunos**: Contém informações sobre os alunos, como nome, matrícula e o curso em que estão matriculados.
+
+**MatriculasDisciplinas**: Armazena dados sobre a matrícula dos alunos em disciplinas específicas e suas notas finais.
+
+**Avaliacoes**: Guarda informações sobre as avaliações feitas pelos alunos nas disciplinas.
+
+**Turmas**: Contém dados sobre as turmas, que estão associadas a cursos específicos.
+
+**Horários**: Armazena os horários das disciplinas nas turmas, incluindo dias da semana e horários de aula.
+
+---
+
+# Star Schema
+
+### Diagrama do Star Schema
+![Diagrama do Star Schema da Escola](escola_star_schema.png)
+
+## Estrutura do Star Schema
+
+### Tabela Fato
+
+**Fato_Professores**:
 - Armazena informações detalhadas sobre os professores.
-- Contém chaves estrangeiras para as tabelas de dimensões.
+- Contém chaves estrangeiras que se relacionam com as tabelas de dimensões.
 
-## Tabelas de Dimensões:
+### Tabelas de Dimensões
 
-- Dim_Departamentos: Informações sobre departamentos.
-- Dim_Cursos: Informações sobre cursos oferecidos.
-- Dim_Disciplinas: Informações sobre disciplinas oferecidas.
-- Dim_Tempo: Informações temporais relevantes para os professores.
+**Dim_Departamentos**:
+- Contém informações detalhadas sobre os departamentos da escola.
 
+**Dim_Cursos**:
+- Armazena dados sobre os cursos oferecidos pela escola.
 
-## Benefícios
-**Simplicidade**: O modelo é mais simples e segue o padrão do Star Schema.
-**Desempenho**: Facilita consultas e relatórios sobre professores e suas associações com departamentos, cursos e disciplinas.
-**Flexibilidade**: Permite análises detalhadas e cruzadas entre professores e suas dimensões relacionadas.
+**Dim_Disciplinas**:
+- Contém informações sobre as disciplinas, como carga horária e curso associado.
+
+**Dim_Tempo**:
+- Armazena informações temporais relevantes para as análises relacionadas aos professores.
+
+---
+
+## Benefícios do Star Schema
+
+- **Simplicidade**: O modelo Star Schema é mais simples de entender e utilizar, facilitando o design e a manutenção do banco de dados.
+  
+- **Desempenho**: Esse modelo otimiza o desempenho das consultas e relatórios, permitindo análises rápidas sobre professores e suas associações com departamentos, cursos e disciplinas.
+  
+- **Flexibilidade**: Oferece uma estrutura flexível para análises detalhadas e cruzadas, permitindo explorar relações entre professores e as diferentes dimensões associadas.
+
+---
