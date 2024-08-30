@@ -1,6 +1,12 @@
-# Modelo Relacional
+# Objetivo
 
-### Diagrama Relacional
+O objetivo deste desafio é criar um **diagrama dimensional** utilizando o **modelo Star Schema** com foco na análise dos dados dos professores. O diagrama deve ser baseado no modelo relacional existente, que já contém informações detalhadas sobre os professores, departamentos, cursos, disciplinas, entre outros.
+
+O foco principal é **o professor** como objeto de análise. A tabela fato deve refletir diversos aspectos relacionados aos professores, como cursos ministrados, o departamento ao qual pertencem, disciplinas oferecidas, e outras associações relevantes.
+
+---
+
+# Diagrama Relacional
 ![Diagrama Relacional da Escola](escola_relational_diag.png)
 
 ## Metadados das Tabelas
@@ -27,9 +33,7 @@
 
 ---
 
-# Star Schema
-
-### Diagrama do Star Schema
+# Diagrama do Star Schema
 ![Diagrama do Star Schema da Escola](escola_star_schema.png)
 
 ## Estrutura do Star Schema
@@ -40,6 +44,8 @@
 - Armazena informações detalhadas sobre os professores.
 - Contém chaves estrangeiras que se relacionam com as tabelas de dimensões.
 
+ ---
+ 
 ### Tabelas de Dimensões
 
 **Dim_Departamentos**:
